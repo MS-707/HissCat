@@ -2,8 +2,8 @@
 
 ## Core Systems
 - [x] Project setup (Unity 2D URP + base folders)
-- [ ] Basic Player Controller (movement, placeholder attack)
-- [ ] Enemy Spawner (dummy enemies)
+- [x] Basic Player Controller (movement, placeholder attack)
+- [x] Enemy Spawner (dummy enemies)
 - [ ] Collision and Damage Detection
 - [ ] Powerup Collection System
 - [ ] Scaling Difficulty Manager

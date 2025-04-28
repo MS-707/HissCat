@@ -4,11 +4,17 @@
 - [x] Project setup (Unity 2D URP + base folders)
 - [x] Basic Player Controller (movement, placeholder attack)
 - [x] Enemy Spawner (dummy enemies)
-- [ ] Collision and Damage Detection
+- [x] Collision and Damage Detection
 - [ ] Powerup Collection System
 - [ ] Scaling Difficulty Manager
 - [ ] Basic UI (health, score, timer)
 - [ ] Pause, Resume, Restart functions
+
+## Health and Damage Systems
+- [x] Basic Health System
+- [ ] Visual Damage Feedback
+- [ ] Damage Number Popups
+- [ ] Invincibility Frames
 
 ## Art Assets
 - [ ] Player character (HissCat) sprites

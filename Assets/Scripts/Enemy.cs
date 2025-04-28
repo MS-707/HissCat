@@ -6,12 +6,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float maxSpeedVariation = 0.5f;
     
+    [Header("Attack Settings")]
+    [SerializeField] private int contactDamage = 1;
+    
     [Header("Target Settings")]
     [SerializeField] private Transform targetTransform;
     
     private Rigidbody2D rb;
     private Vector2 movementDirection;
     private float actualSpeed;
+    private Health targetHealth;
     
     void Start()
     {
@@ -27,6 +31,7 @@ public class Enemy : MonoBehaviour
             if (player != null)
             {
                 targetTransform = player.transform;
+                targetHealth = player.GetComponent<Health>();
             }
         }
     }
@@ -56,20 +61,18 @@ public class Enemy : MonoBehaviour
         }
     }
     
-    // Called when enemy is hit by player attack
-    public void TakeDamage()
-    {
-        // Placeholder for future damage logic
-        Destroy(gameObject);
-    }
-    
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Placeholder for future collision handling
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Enemy collided with player!");
-            // Player damage will be handled here later
+            
+            // Damage the player on contact
+            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(contactDamage);
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
 - [x] Basic Player Controller (movement, placeholder attack)
 - [x] Enemy Spawner (dummy enemies)
 - [x] Collision and Damage Detection
-- [ ] Powerup Collection System
+- [x] Powerup Collection System
 - [ ] Scaling Difficulty Manager
 - [ ] Basic UI (health, score, timer)
 - [ ] Pause, Resume, Restart functions
@@ -15,6 +15,13 @@
 - [ ] Visual Damage Feedback
 - [ ] Damage Number Popups
 - [ ] Invincibility Frames
+
+## Powerup Systems
+- [x] Basic Powerup Collection
+- [x] Health Restore Powerup
+- [x] Speed Boost Powerup
+- [ ] Attack/Hiss Powerups
+- [ ] Visual Powerup Feedback
 
 ## Art Assets
 - [ ] Player character (HissCat) sprites

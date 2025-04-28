@@ -69,4 +69,35 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, hissRadius);
     }
+    
+    // Getter and setter methods for powerups
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+    
+    public void SetMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+    
+    public int GetHissDamage()
+    {
+        return hissDamage;
+    }
+    
+    public void SetHissDamage(int damage)
+    {
+        hissDamage = damage;
+    }
+    
+    public float GetHissRadius()
+    {
+        return hissRadius;
+    }
+    
+    public void SetHissRadius(float radius)
+    {
+        hissRadius = radius;
+    }
 }

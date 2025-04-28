@@ -10,6 +10,10 @@ public class Health : MonoBehaviour
     [Header("Events")]
     public UnityEvent OnDamage;
     public UnityEvent OnDeath;
+    public UnityEvent OnHeal;
+    
+    // Invulnerability flag (for shield powerup)
+    private bool isInvulnerable = false;
     
     void Start()
     {
@@ -19,6 +23,10 @@ public class Health : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
+        // Skip damage if invulnerable
+        if (isInvulnerable)
+            return;
+            
         // Reduce health by the damage amount
         currentHealth -= amount;
         
@@ -30,6 +38,18 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+    
+    public void Heal(int amount)
+    {
+        // Calculate new health value
+        int newHealth = currentHealth + amount;
+        
+        // Cap at max health
+        currentHealth = Mathf.Min(newHealth, maxHealth);
+        
+        // Invoke the heal event
+        OnHeal?.Invoke();
     }
     
     void Die()
@@ -61,5 +81,17 @@ public class Health : MonoBehaviour
     public int GetMaxHealth()
     {
         return maxHealth;
+    }
+    
+    // Set invulnerability (used by shield powerup)
+    public void SetInvulnerable(bool invulnerable)
+    {
+        isInvulnerable = invulnerable;
+    }
+    
+    // Get invulnerability status
+    public bool IsInvulnerable()
+    {
+        return isInvulnerable;
     }
 }
